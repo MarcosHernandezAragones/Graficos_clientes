@@ -11,4 +11,75 @@ package Modelo;
  */
 public class Cliente {
     
+    private String nombre;
+    private String apellido1;
+    private String apellido2;
+    private String estado_civil;
+    private String sexo;
+    private int edad;
+
+    public Cliente(String nombre, String apellido1, String apellido2, String estado_civil, String sexo, int edad) {
+        this.nombre = nombre;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
+        this.estado_civil = estado_civil;
+        this.sexo = sexo;
+        this.edad = edad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido1() {
+        return apellido1;
+    }
+
+    public String getApellido2() {
+        return apellido2;
+    }
+
+    public String getEstado_civil() {
+        return estado_civil;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido1(String apellido1) {
+        this.apellido1 = apellido1;
+    }
+
+    public void setApellido2(String apellido2) {
+        this.apellido2 = apellido2;
+    }
+
+    public void setEstado_civil(String estado_civil) {
+        this.estado_civil = estado_civil;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2 + ", estado_civil=" + estado_civil + ", sexo=" + sexo + ", edad=" + edad + '}';
+    }
+    
+    
+    
 }

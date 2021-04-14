@@ -5,10 +5,18 @@
  */
 package Controlador;
 
+import Modelo.Cliente;
+import java.util.ArrayList;
+
 /**
  *
  * @author alumnodaw
  */
 public class IODatos {
     
+    public void cargarDatos(ArrayList <Cliente> vclientes){
+    
+    }
+    
 }
+

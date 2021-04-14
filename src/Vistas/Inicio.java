@@ -5,6 +5,9 @@
  */
 package Vistas;
 
+import Modelo.Cliente;
+import java.util.ArrayList;
+
 /**
  *
  * @author alumnodaw
@@ -16,6 +19,8 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         initComponents();
+        
+        ArrayList Clientes = new ArrayList();
     }
 
     /**
@@ -27,18 +32,25 @@ public class Inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jRadioButton1 = new javax.swing.JRadioButton();
+        buttonGroupSexo = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabelNombre = new javax.swing.JLabel();
         jTextFieldNombre = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jTextFieldApellido1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldApellido2 = new javax.swing.JTextField();
+        jLabelSexo = new javax.swing.JLabel();
+        jRadioButtonMasculino = new javax.swing.JRadioButton();
+        jRadioButtonFemenino = new javax.swing.JRadioButton();
+        jLabel3 = new javax.swing.JLabel();
+        jTextFieldEdad = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBoxEC = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jTextArea1 = new javax.swing.JTextArea();
-
-        jRadioButton1.setText("jRadioButton1");
+        jButtonGuardar = new javax.swing.JButton();
+        jToggleButtonSalir = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,14 +59,62 @@ public class Inicio extends javax.swing.JFrame {
         jLabelNombre.setText("Nombre");
 
         jTextFieldNombre.setText("Nombre");
+        jTextFieldNombre.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextFieldNombreFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextFieldNombreFocusLost(evt);
+            }
+        });
 
         jLabel1.setText("Primer Apellido");
 
         jTextFieldApellido1.setText("Apellido");
+        jTextFieldApellido1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextFieldApellido1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextFieldApellido1FocusLost(evt);
+            }
+        });
 
         jLabel2.setText("Segundo Apellido");
 
-        jTextField1.setText("jTextField1");
+        jTextFieldApellido2.setText("Apellido");
+        jTextFieldApellido2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextFieldApellido2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextFieldApellido2FocusLost(evt);
+            }
+        });
+
+        jLabelSexo.setText("Sexo");
+
+        buttonGroupSexo.add(jRadioButtonMasculino);
+        jRadioButtonMasculino.setText("Masculino");
+
+        buttonGroupSexo.add(jRadioButtonFemenino);
+        jRadioButtonFemenino.setText("Femenino");
+
+        jLabel3.setText("Edad");
+
+        jTextFieldEdad.setText("Edad");
+        jTextFieldEdad.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextFieldEdadFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextFieldEdadFocusLost(evt);
+            }
+        });
+
+        jLabel4.setText("Estado Civil");
+
+        jComboBoxEC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estado Civil:", "Casado", "Soltero", "Divorciado", "Viudo" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -64,17 +124,32 @@ public class Inicio extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                             .addComponent(jLabelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextFieldNombre)
-                            .addComponent(jTextFieldApellido1, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE))))
+                            .addComponent(jTextFieldApellido1, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                            .addComponent(jLabelSexo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jRadioButtonMasculino)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButtonFemenino))
+                            .addComponent(jTextFieldEdad)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldApellido2, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
+                            .addComponent(jComboBoxEC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -91,8 +166,21 @@ public class Inicio extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(230, Short.MAX_VALUE))
+                    .addComponent(jTextFieldApellido2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jComboBoxEC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelSexo)
+                    .addComponent(jRadioButtonMasculino)
+                    .addComponent(jRadioButtonFemenino))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextFieldEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -113,9 +201,23 @@ public class Inicio extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextArea1, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+                .addComponent(jTextArea1, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        jButtonGuardar.setText("Guardar");
+        jButtonGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonGuardarMouseClicked(evt);
+            }
+        });
+
+        jToggleButtonSalir.setText("Salir");
+        jToggleButtonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButtonSalirMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,6 +229,12 @@ public class Inicio extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonGuardar)
+                .addGap(18, 18, 18)
+                .addComponent(jToggleButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,12 +242,89 @@ public class Inicio extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonGuardar)
+                    .addComponent(jToggleButtonSalir))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextFieldNombreFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldNombreFocusGained
+        // TODO add your handling code here:
+        jTextFieldNombre.setText("");
+    }//GEN-LAST:event_jTextFieldNombreFocusGained
+
+    private void jTextFieldNombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldNombreFocusLost
+        // TODO add your handling code here:
+        if (jTextFieldNombre.getText().equalsIgnoreCase("")) {
+            jTextFieldNombre.setText("Nombre");
+        }
+    }//GEN-LAST:event_jTextFieldNombreFocusLost
+
+    private void jTextFieldApellido1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldApellido1FocusGained
+        // TODO add your handling code here:
+        jTextFieldApellido1.setText("");
+    }//GEN-LAST:event_jTextFieldApellido1FocusGained
+
+    private void jTextFieldApellido1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldApellido1FocusLost
+        // TODO add your handling code here:
+        if (jTextFieldApellido1.getText().equalsIgnoreCase("")) {
+            jTextFieldApellido1.setText("Apellido 1");
+        }
+    }//GEN-LAST:event_jTextFieldApellido1FocusLost
+
+    private void jTextFieldApellido2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldApellido2FocusGained
+        // TODO add your handling code here:
+        jTextFieldApellido2.setText("");
+    }//GEN-LAST:event_jTextFieldApellido2FocusGained
+
+    private void jTextFieldApellido2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldApellido2FocusLost
+        // TODO add your handling code here:
+        if (jTextFieldApellido2.getText().equalsIgnoreCase("")) {
+            jTextFieldApellido2.setText("Apellido2");
+        }
+    }//GEN-LAST:event_jTextFieldApellido2FocusLost
+
+    private void jTextFieldEdadFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldEdadFocusGained
+        // TODO add your handling code here:
+        jTextFieldEdad.setText("");
+    }//GEN-LAST:event_jTextFieldEdadFocusGained
+
+    private void jTextFieldEdadFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldEdadFocusLost
+        // TODO add your handling code here:
+        if (jTextFieldEdad.getText().equalsIgnoreCase("")) {
+            jTextFieldEdad.setText("Edad");
+        }
+    }//GEN-LAST:event_jTextFieldEdadFocusLost
+
+    private void jToggleButtonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButtonSalirMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jToggleButtonSalirMouseClicked
+
+    private void jButtonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonGuardarMouseClicked
+        // TODO add your handling code here:
+        String nombre,apellido1,apellido2,estado_civil,sexo,cliente;
+        int edad;
+        nombre= jTextFieldNombre.getText();
+        apellido1= jTextFieldApellido1.getText();
+        apellido2= jTextFieldApellido2.getText();
+        estado_civil=(String)jComboBoxEC.getSelectedItem();
+        if (jRadioButtonMasculino.isSelected()) {
+            sexo="Masculino";
+        }else{
+            sexo ="Femenino";
+        }
+        edad=Integer.valueOf(jTextFieldEdad.getText());
+        
+        Cliente c = new Cliente(nombre, apellido1, apellido2, estado_civil, sexo, edad);
+        vClientes.add(c);
+        
+    }//GEN-LAST:event_jButtonGuardarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -176,16 +361,26 @@ public class Inicio extends javax.swing.JFrame {
         });
     }
 
+    private ArrayList<Cliente> vClientes;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroupSexo;
+    private javax.swing.JButton jButtonGuardar;
+    private javax.swing.JComboBox<String> jComboBoxEC;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelSexo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButtonFemenino;
+    private javax.swing.JRadioButton jRadioButtonMasculino;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextFieldApellido1;
+    private javax.swing.JTextField jTextFieldApellido2;
+    private javax.swing.JTextField jTextFieldEdad;
     private javax.swing.JTextField jTextFieldNombre;
+    private javax.swing.JToggleButton jToggleButtonSalir;
     // End of variables declaration//GEN-END:variables
 }
