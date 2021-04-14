@@ -6,7 +6,9 @@
 package Vistas;
 
 import Modelo.Cliente;
+import java.awt.Image;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -20,7 +22,13 @@ public class Inicio extends javax.swing.JFrame {
     public Inicio() {
         initComponents();
         
-        ArrayList Clientes = new ArrayList();
+        vClientes = Controlador.IODatos.cargarDatos();
+        
+       // setIconImage(new ImageIcon(getClass().getResource("/imagenes/pack_chorizo.jpg")).getImage());
+        
+        for (Cliente C : vClientes) {
+            jTextArea1.setText(jTextArea1.getText() +"\n"+C);
+        }
     }
 
     /**
@@ -323,6 +331,10 @@ public class Inicio extends javax.swing.JFrame {
         
         Cliente c = new Cliente(nombre, apellido1, apellido2, estado_civil, sexo, edad);
         vClientes.add(c);
+        Controlador.IODatos.guardarDatos(vClientes);
+        
+       
+            jTextArea1.setText(jTextArea1.getText() + "\n"+c.toString());
         
     }//GEN-LAST:event_jButtonGuardarMouseClicked
 
